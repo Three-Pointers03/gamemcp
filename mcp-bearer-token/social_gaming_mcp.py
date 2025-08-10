@@ -131,7 +131,7 @@ def _ensure_queue(game_type: str) -> MatchmakingQueue:
 
 def _generate_skribbl_link(lobby_id: str) -> str:
     base = os.environ.get("SKRIBBL_LOBBY_BASE", "https://skribbl.io/")
-    return f"{base}?private={lobby_id[:6]}"
+    return f"{base}?{lobby_id[:8]}"
 
 
 def _generate_deathbyai_link(lobby_id: str) -> str:
