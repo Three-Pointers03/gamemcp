@@ -28,6 +28,8 @@ EXPOSE 8087
 # Runtime env vars expected:
 # - AUTH_TOKEN
 # - MY_NUMBER
+# - SUPABASE_URL
+# - SUPABASE_ANON_KEY
 # - PORT (provided by platform)
 
 CMD ["python", "mcp-bearer-token/social_gaming_mcp.py"]

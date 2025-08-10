@@ -57,6 +57,8 @@ Then edit `.env` and add your details:
 ```env
 AUTH_TOKEN=your_secret_token_here
 MY_NUMBER=919876543210
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
 **Important Notes:**
@@ -71,7 +73,7 @@ cd mcp-bearer-token
 python mcp_starter.py
 ```
 
-You'll see: `🎮 Starting Social Gaming MCP server on http://0.0.0.0:8087`
+You'll see: `🎮 Starting Social Gaming MCP server on http://0.0.0.0:8087  (Supabase-backed state)`
 
 ## Docker (DigitalOcean)
 
@@ -88,6 +90,8 @@ DigitalOcean App Platform:
 - Set environment variables:
   - `AUTH_TOKEN`
   - `MY_NUMBER`
+  - `SUPABASE_URL`
+  - `SUPABASE_ANON_KEY`
   - optional: `LOBBY_TTL_MINUTES`, `SKRIBBL_LOBBY_BASE`, `DEATHBYAI_LOBBY_BASE`
 - Exposes `PORT` automatically; the server reads `PORT` if provided
 
