@@ -71,7 +71,25 @@ cd mcp-bearer-token
 python mcp_starter.py
 ```
 
-You'll see: `🚀 Starting MCP server on http://0.0.0.0:8086`
+You'll see: `🎮 Starting Social Gaming MCP server on http://0.0.0.0:8087`
+
+## Docker (DigitalOcean)
+
+Build and run locally:
+
+```bash
+docker build -t social-gaming-mcp .
+docker run -p 8087:8087 -e AUTH_TOKEN=your_token -e MY_NUMBER=919998881729 social-gaming-mcp
+```
+
+DigitalOcean App Platform:
+- Create a new app from repo path `gamemcp/`
+- Autodetect Dockerfile
+- Set environment variables:
+  - `AUTH_TOKEN`
+  - `MY_NUMBER`
+  - optional: `LOBBY_TTL_MINUTES`, `SKRIBBL_LOBBY_BASE`, `DEATHBYAI_LOBBY_BASE`
+- Exposes `PORT` automatically; the server reads `PORT` if provided
 
 ### Step 4: Make It Public (Required by Puch)
 

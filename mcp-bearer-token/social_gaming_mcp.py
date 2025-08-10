@@ -478,10 +478,11 @@ async def set_lobby_status(
 
 # ---------------- Server ----------------
 async def main():
-    print("🎮 Starting Social Gaming MCP server on http://0.0.0.0:8087  (in-memory state)")
+    port = int(os.environ.get("PORT", "8087"))
+    print(f"🎮 Starting Social Gaming MCP server on http://0.0.0.0:{port}  (in-memory state)")
     # Background cleanup
     asyncio.create_task(_cleanup_task())
-    await mcp.run_async("streamable-http", host="0.0.0.0", port=8087)
+    await mcp.run_async("streamable-http", host="0.0.0.0", port=port)
 
 
 if __name__ == "__main__":
