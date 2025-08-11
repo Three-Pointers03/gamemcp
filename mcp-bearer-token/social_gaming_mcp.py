@@ -405,6 +405,10 @@ async def validate() -> str:
     return MY_NUMBER
 
 
+@mcp.tool
+async def about() -> dict:
+    return {"name": "GameParty MCP", "description": "An MCP server for meeting people to play games"}
+
 @mcp.tool(description=JOIN_QUEUE_DESCRIPTION.model_dump_json())
 @log_tool_io("join_queue")
 async def join_queue(
